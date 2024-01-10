@@ -1,0 +1,37 @@
+{
+  "notification.servers": [
+    {
+      "type": "client",
+      "host": "127.0.0.1",
+      "port": 22280,
+      "protocol": "http"
+    },
+    {
+      "type": "admin",
+      "host": "127.0.0.1",
+      "port": 22281,
+      "protocol": "http"
+    }
+  ],
+  "diffusion.allow-http-auth": true,
+  "cluster.mailers": [
+    {
+      "key": "gmail",
+      "type": "smtp",
+      "options": {
+        "host": "smtp.gmail.com",
+        "port": 587,
+        "user": "yourusername@gmail.com",
+        "password": "youremailpasswordhere",
+        "protocol": "tls"
+      }
+    }
+  ],
+  "phabricator.base-uri": "http://your.phorgedomain.com/",
+  "storage.mysql-engine.max-size": 8388608,
+  "pygments.enabled": true,
+  "mysql.pass": "yourdbpasswordhere",
+  "mysql.user": "root",
+  "mysql.port": "3306",
+  "mysql.host": "db"
+}

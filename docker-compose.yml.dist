@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  mcphorge:
+    build: .
+    image: mcphorge:23.12
+    container_name: mcphorge
+    restart: always
+    ports:
+      - "7080:80"
+    volumes:
+      - ./repo:/var/repo
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: mcphorge-db
+    restart: always
+    ports:
+      - "7081:3306"
+    volumes:
+      - ./mysql.conf.d:/etc/mysql/mysql.conf.d/
+      - ./mysql-data:/var/lib/mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=yourdbpasswordhere
