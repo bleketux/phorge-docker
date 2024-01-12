@@ -44,7 +44,7 @@ RUN git -C /var/www/html clone https://we.phorge.it/source/arcanist.git \
    && git -C /var/www/html clone https://we.phorge.it/source/phorge.git \
    && git -C /var/www/html clone https://github.com/PHPOffice/PHPExcel.git
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
    && apt update && apt install -y \
    nodejs \
    python3-pip \
