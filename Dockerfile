@@ -42,7 +42,9 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 
 RUN git -C /var/www/html clone https://we.phorge.it/source/arcanist.git \
    && git -C /var/www/html clone https://we.phorge.it/source/phorge.git \
-   && git -C /var/www/html clone https://github.com/PHPOffice/PHPExcel.git
+   && git -C /var/www/html clone https://github.com/PHPOffice/PHPExcel.git \
+   && git config --system --add safe.directory /var/www/html/arcanist \
+   && git config --system --add safe.directory /var/www/html/phorge
 
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
    && apt update && apt install -y \
